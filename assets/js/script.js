@@ -120,6 +120,20 @@ function quizEnd() {
     // hide questions section 
     questionsEl.setAttribute("class", "hide");
 }
+
+// update the time on the clock with time--; and then set the textContent of the timerEl variable to display the time variable
+// if the time is less than or equal to 0 it will return as true and run quizEnd, effectively ending the quiz if the timer ever reaches 0.
+function clockTick() {
+    // update time
+    time--;
+    timerEl.textContent = time;
+
+    // check if user ran out of time
+    if (time <= 0) {
+        quizEnd();
+    }
+}
+
 //
 // start quiz
 startBtn.onclick = startQuiz;
