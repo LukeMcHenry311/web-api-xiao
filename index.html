@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+    <title>web api challenge</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+<body>
+    <div class="sores"><a href="score.html">Highscores</a></div>
+    <div class="container">
+        <div id="start-screen" class="start">
+            <h1>Coding Quiz challenge</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem commodi assumenda necessitatibus neque repellendus ea provident esse natus nisi iste unde eum, nemo sint ullam mollitia tempore impedit placeat quod.
+            </p>
+            <button id="start">Start Quiz</button>
+        </div>
+
+        <div id="questions" class="hide">
+            <h2 id="question-title"></h2>
+            <div id="choices" class="choices"></div>
+        </div>
+
+        <div id="end-screen" class="hide">
+            <h2 id="question-title"></h2>
+            <div id="choices" class="choices"></div>
+        </div>
+
+        <div id="end-screen" class="hide">
+            <h2>All done!</h2>
+            <p>Your final score is <span id="final-score"></span></p>
+            <p>
+                Enter initials: <input type="text" id="initials" max="5" />
+                <button id="submit">Submit</button>
+            </p>
+        </div>
+
+        <div id="feedback" class="feedback hide"></div>
+    </div>
+
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
