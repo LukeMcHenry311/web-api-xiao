@@ -101,6 +101,6 @@ function questionClick() {
     }
 }
 
-
+//
 // start quiz
 startBtn.onclick = startQuiz;
