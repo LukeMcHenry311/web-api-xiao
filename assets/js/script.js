@@ -12,6 +12,12 @@ var currentQuestionIndex = 0;
 var time = questions.length * 15;
 var timerId;
 
+
+// hide the start screen as quiz starts 
+// show questions section
+// start the timer for the clock
+// show starting time on clock
+// start the getQuestion function
 function startQuiz() {
     // hide start screen
     var startScreenEl = document.getElementById("start-screen");
@@ -27,4 +33,41 @@ function startQuiz() {
     timerEl.textContent = time;
 
     getQuestion();
+}
+
+
+// find the question object from the array (in questions.js)
+// update the title with the current question 
+// clear out the old choices, hence the blank "" for innerHTML
+// loop over the choices, variable creates button
+// set attributes of class choice and value to mynewChoice
+// attach click event listener to each choice with .onclick
+// append mynewChoice to the page so it displays
+function getQuestion() {
+    // get current question object from array
+    var currentQuestion = questions[currentQuestionIndex];
+
+    // update title with current question
+    var titleEl = document.getElementById("question-title");
+    titleEl.textContent = currentQuestion.title;
+
+    // clear out any old question choices
+    choicesEl.innerHTML = "";
+
+    // loop over choices 
+    currentQuestion.choices.forEach(function(choice, i) {
+        // create new button for each choice 
+        var mynewChoice = document.createElement("button");
+        mynewChoice.setAttribute("class", "choice");
+        mynewChoice.setAttribute("value", choice);
+
+        mynewChoice.textContent = i + 1 + ". " + choice;
+
+        // attach click event listener to each choice
+        // define questionClick next 
+        mynewChoice.onclick = questionClick;
+
+        // append child to the page 
+        choicesEl.appendChild(mynewChoice);
+    })
 }
