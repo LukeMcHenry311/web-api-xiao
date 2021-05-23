@@ -71,3 +71,36 @@ function getQuestion() {
         choicesEl.appendChild(mynewChoice);
     })
 }
+
+// check if the player got the wrong answer
+// IF they got it wrong make time = -15 (time -= 15;)
+// show the new (penalized) time on the page 
+// go to the next question with i++ 
+// if we are at the last question end the quiz : else get the next question
+function questionClick() {
+    // check if user guessed wrong
+    if (this.value !== questions[currentQuestionIndex].answer) {
+        // penalize time
+        time -= 15;
+
+        if (time < 0) {
+            time = 0;
+        }
+        // display new time on page 
+        timerEl.textContent = time;
+    }
+
+    // next question
+    currentQuestionIndex++;
+
+    // time checker 
+    if (currentQuestionIndex === questions.length) {
+        quizEnd();
+    } else {
+        getQuestion();
+    }
+}
+
+
+// start quiz
+startBtn.onclick = startQuiz;
