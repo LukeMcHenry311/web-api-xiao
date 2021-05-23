@@ -101,6 +101,25 @@ function questionClick() {
     }
 }
 
+// stop the timer with clearInterval of the timerId variable
+// show the end screen by removing the "class" which hides it from view 
+// show the final score by setting the finalscoreEl variable (which we just created) to display in its textContent the time variable, which is defined above
+// hide the questions by giving it the same "class" that we just took off of the end screen
+function quizEnd() {
+    // stop timer 
+    clearInterval(timerId);
+
+    // show end screen
+    var endScreenEl = document.getElementById("end-screen");
+    endScreenEl.removeAttribute("class");
+
+    // show final score
+    var finalscoreEl = document.getElementById("final-score");
+    finalscoreEl.textContent = time;
+
+    // hide questions section 
+    questionsEl.setAttribute("class", "hide");
+}
 //
 // start quiz
 startBtn.onclick = startQuiz;
