@@ -1,6 +1,7 @@
 /*Collaborated with Janvier Mbilizi*/
 body {
     font-family: "Josefin Slab", serif;
+    background-color: #deb887;
   }
   .wrapper {
     margin: 100px auto 0 auto;
@@ -52,7 +53,7 @@ body {
     cursor: pointer;
     font-family: "Architects Daughter", cursive;
     font-size: 100%;
-    background-color: teal;
+    background-color: #fe4164;
     border-radius: 5px;
     padding: 2px 10px;
     color: white;
