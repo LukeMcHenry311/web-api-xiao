@@ -161,8 +161,8 @@ function saveHighscore() {
     }
 }
 
+// if event.key equals enter run saveHighscore function
 function checkForEnter(event) {
-    // "13" represents the enter key
     if (event.key === "Enter") {
         saveHighscore();
     }
