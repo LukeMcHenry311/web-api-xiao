@@ -10,7 +10,7 @@ var feedbackEl = document.querySelector("#feedback");
 // quiz states variables 
 var currentQuestionIndex = 0;
 var time = questions.length * 15;
-var timerId;
+var timerId = 90;
 
 
 // hide the start screen as quiz starts 
@@ -161,10 +161,17 @@ function saveHighscore() {
     }
 }
 
-
+function checkForEnter(event) {
+    // "13" represents the enter key
+    if (event.key === "Enter") {
+        saveHighscore();
+    }
+}
 
 // submit initials
 submitBtn.onclick = saveHighscore;
 
 // start quiz
 startBtn.onclick = startQuiz;
+
+initialsEl.onkeyup = checkForEnter;
