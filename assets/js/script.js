@@ -134,6 +134,11 @@ function clockTick() {
     }
 }
 
+// get the value of the input box using .trim which just removes whitespace from both ends of the string.
+// get the saved scores from the localstorage using JSON which is just converting the string into an object
+// set the variable of newScore to equal the time and initials
+// save the newScore variable to localstorage by using .push and making use of JSON again but this way from object to string so it can go in
+// go to the new page of scores.html to see the score leaderboard
 function saveHighscore() {
     // get value of input box
     var initials = initialsEl.value.trim();
@@ -156,6 +161,10 @@ function saveHighscore() {
     }
 }
 
-//
+
+
+// submit initials
+submitBtn.onclick = saveHighscore;
+
 // start quiz
 startBtn.onclick = startQuiz;
